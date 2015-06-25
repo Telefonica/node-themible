@@ -1,0 +1,49 @@
+[
+  {
+    "errors": [
+      {
+        "type": "THEMIBLE_INVALID_PARAM",
+        "fields": [
+          {
+            "key": "message",
+            "value": "Invalid parameter: {1}",
+            "doc": null
+          },
+          {
+            "key": "namespace",
+            "value": "THEMIBLE",
+            "doc": null
+          }
+        ],
+        "doc": {
+          "description": "There was an error in theme folders.",
+          "tags": []
+        }
+      },
+      {
+        "type": "THEMIBLE_INVALID_DIRECTORY",
+        "fields": [
+          {
+            "key": "message",
+            "value": "Invalid directory: {1}",
+            "doc": null
+          },
+          {
+            "key": "namespace",
+            "value": "THEMIBLE",
+            "doc": null
+          }
+        ],
+        "doc": {
+          "description": "There was an error in theme folders.",
+          "tags": []
+        }
+      }
+    ],
+    "namespace": null,
+    "doc": {
+      "description": "Themible errors.",
+      "tags": []
+    }
+  }
+]
