@@ -38,9 +38,10 @@ describe('Themible Middleware Tests', function() {
       return 'less';
     };
 
-    l10nmiddMock = function(locales, directory) {
+    l10nmiddMock = function(locales, directory, defaultLocale) {
       expect(locales).to.exist;
       expect(directory).to.exist;
+      expect(defaultLocale).to.exist;
       return 'l10n';
     };
 
@@ -59,7 +60,7 @@ describe('Themible Middleware Tests', function() {
     var exception = false;
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'themeNoLocales'), '/themePath');
+          'themeNoLocales'), '/themePath', 'en');
     } catch (err) {
       exception = true;
       expect(err).to.be.apiError(errors.THEMIBLE_INVALID_DIRECTORY());
@@ -74,7 +75,7 @@ describe('Themible Middleware Tests', function() {
     var exception = false;
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'themeLocalesFile'), '/themePath');
+          'themeLocalesFile'), '/themePath', 'en');
     } catch (err) {
       exception = true;
       expect(err).to.be.apiError(errors.THEMIBLE_INVALID_DIRECTORY());
@@ -89,7 +90,7 @@ describe('Themible Middleware Tests', function() {
     var exception = false;
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'themeNoPublic'), '/themePath');
+          'themeNoPublic'), '/themePath', 'en');
     } catch (err) {
       exception = true;
       expect(err).to.be.apiError(errors.THEMIBLE_INVALID_DIRECTORY());
@@ -104,7 +105,7 @@ describe('Themible Middleware Tests', function() {
     var exception = false;
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'themePublicFile'), '/themePath');
+          'themePublicFile'), '/themePath', 'en');
     } catch (err) {
       exception = true;
       expect(err).to.be.apiError(errors.THEMIBLE_INVALID_DIRECTORY());
@@ -162,7 +163,7 @@ describe('Themible Middleware Tests', function() {
     var themePath = '/themePath';
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'theme1'), '/themePath');
+          'theme1'), '/themePath', 'en');
     } catch (err) {
       exception = true;
     } finally {
@@ -181,7 +182,7 @@ describe('Themible Middleware Tests', function() {
     var themePath = '/themePath';
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'theme2'), '/themePath');
+          'theme2'), '/themePath', 'en');
     } catch (err) {
       exception = true;
     } finally {
@@ -213,7 +214,7 @@ describe('Themible Middleware Tests', function() {
     var themePath = '/themePath';
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'theme2'), '/themePath');
+          'theme2'), '/themePath', 'en');
     } catch (err) {
       exception = true;
     } finally {
@@ -241,7 +242,7 @@ describe('Themible Middleware Tests', function() {
     var themePath = '/themePath';
     try {
       themible(appMock, path.join(__dirname, 'testThemes',
-          'theme2'), '/themePath');
+          'theme2'), '/themePath', 'en');
     } catch (err) {
       exception = true;
     } finally {
